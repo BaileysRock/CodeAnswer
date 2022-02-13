@@ -16,6 +16,11 @@
 //输入：s = "ac"
 //输出："a"
 
+// 思路
+// 中心扩展算法
+// 跑i的循环
+// 每次取中心为i或i+1，由于回文串中心只可能是1个或2个
+// 计算由其扩展出来的字符串的最长的值，即若中心左侧和右侧的值相同，则继续扩展
 
 #include <iostream>
 
@@ -24,19 +29,37 @@ using namespace std;
 class Solution {
 public:
     string longestPalindrome(string s) {
-        int length = s.length();
-        int count = 0;
-        string result = "";
-        for (int i = 0; i < length; i++) {
-            if(s[i] == s[length-i-1])
-            {
-                count++;
-                result+
+        // 中心扩展法
+        int maxlen = 0;
+        string maxstr = "";
+        for (int i = 0; i < s.length(); i++) {
+            // 两个中心点
+            int left = i;
+            int right = i + 1;
+            if (right < s.length() && s.at(left) == s.at(right)) {
+                while (left >= 0 && right < s.length() && s.at(left) == s.at(right)) {
+                    if (right - left + 1 > maxlen) {
+                        maxlen = right - left + 1;
+                        maxstr = s.substr(left,maxlen);
+                    }
+                    left--;
+                    right++;
+                }
+            }
+            // 单个中心点
+            left = i;
+            right = i;
+            while (left >= 0 && right < s.length() && s.at(left) == s.at(right)) {
+                if (right - left + 1 > maxlen) {
+                    maxlen = right - left + 1;
+                    maxstr = s.substr(left,maxlen);
+                }
+                left--;
+                right++;
             }
 
         }
-
-
+        return maxstr;
     }
 };
 
