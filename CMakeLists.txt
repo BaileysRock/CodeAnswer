@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(Leetcode)
-set(CMAKE_C_STANDARD 99)
-
+set(CMAKE_CXX_STANDARD 14)
 add_executable(Leetcode main.cpp)
 
 # leetcode 1-100
@@ -55,3 +54,7 @@ add_executable(jz9 JZ/StackQueue/jz9.cpp)
 add_executable(jz30 JZ/StackQueue/jz30.cpp)
 add_executable(jz31 "JZ/StackQueue/jz31(not).cpp")
 add_executable(jz73 JZ/StackQueue/jz73.cpp)
+
+
+
+add_executable(meituan WrittenTest/meituan.cpp)

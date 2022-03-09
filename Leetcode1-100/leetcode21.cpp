@@ -71,5 +71,18 @@ public:
 
 
 int main() {
+    // [[1,4,5],[1,3,4],[2,6]]
+    ListNode *head13 = new ListNode(5);
+    ListNode*head12 = new ListNode(4,head13);
+    ListNode*head11 = new ListNode(1,head12);
 
+    ListNode *head23 = new ListNode(4);
+    ListNode*head22 = new ListNode(3,head23);
+    ListNode*head21 = new ListNode(1,head22);
+
+    ListNode *head32 = new ListNode(6);
+    ListNode*head31 = new ListNode(2,head32);
+    vector<ListNode*> temp = {head11,head21,head31};
+    ListNode * head = (new Solution)->mergeTwoLists(head11,head21);
+    return 0;
 }
