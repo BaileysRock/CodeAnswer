@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(Leetcode)
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 99)
+
 add_executable(Leetcode main.cpp)
 
 # leetcode 1-100
@@ -32,14 +34,10 @@ add_executable(leetcode25 Leetcode1-100/leetcode25.cpp)
 add_executable(leetcode26 Leetcode1-100/leetcode26.cpp)
 add_executable(leetcode27 Leetcode1-100/leetcode27.cpp)
 
+# 牛客题目
 add_executable(NC51 NowCoder/NC51.cpp)
 
-
-add_executable(merge DataStructure/Sort/merge.cpp)
-
-
-
-
+# 牛客剑指Offer题目
 add_executable(jz6 JZ/LinkedList/jz6.cpp)
 add_executable(jz18 JZ/LinkedList/jz18.cpp)
 add_executable(jz22 JZ/LinkedList/jz22.cpp)
@@ -57,4 +55,10 @@ add_executable(jz73 JZ/StackQueue/jz73.cpp)
 
 
 
-add_executable(meituan WrittenTest/meituan.cpp)
+# 数据结构
+add_executable(BiTreeC DataStructure/BiTree/BiTree.c)
+add_executable(merge DataStructure/Sort/merge.cpp)
+
+
+
+
